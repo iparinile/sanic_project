@@ -1,8 +1,8 @@
-"""Create Employee
+"""add table employee
 
-Revision ID: 5f5120dd4341
+Revision ID: c64aad4d6721
 Revises: 
-Create Date: 2021-01-23 14:08:49.483076
+Create Date: 2021-01-27 15:01:24.893665
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '5f5120dd4341'
+revision = 'c64aad4d6721'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -22,10 +22,16 @@ def upgrade():
     sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
     sa.Column('created_at', sa.TIMESTAMP(), nullable=False),
     sa.Column('update_at', sa.TIMESTAMP(), nullable=False),
+    sa.Column('login', sa.VARCHAR(length=20), nullable=False),
+    sa.Column('password', sa.VARBINARY(), nullable=False),
     sa.Column('first_name', sa.VARCHAR(length=50), nullable=True),
     sa.Column('last_name', sa.VARCHAR(length=50), nullable=True),
+    sa.Column('is_delete', sa.BOOLEAN(), nullable=False),
+    sa.Column('position', sa.VARCHAR(length=50), nullable=True),
+    sa.Column('department', sa.VARCHAR(length=50), nullable=True),
     sa.PrimaryKeyConstraint('id'),
-    sa.UniqueConstraint('id')
+    sa.UniqueConstraint('id'),
+    sa.UniqueConstraint('login')
     )
     # ### end Alembic commands ###
 

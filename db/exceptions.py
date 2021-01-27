@@ -6,5 +6,8 @@ class DBDataException(Exception):
     pass
 
 
-class UserExistsException(Exception):
+class DBEmployeeExistsException(Exception):
+    pass
+
+class DBEmployeeNotExistsException(Exception):
     pass
