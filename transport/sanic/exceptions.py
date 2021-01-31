@@ -23,3 +23,7 @@ class SanicDBException(SanicException):
 
 class SanicEmployeeNotFound(SanicException):
     status_code = 404
+
+
+class SanicAuthException(SanicException):
+    status_code = 401
