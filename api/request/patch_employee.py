@@ -10,6 +10,7 @@ class RequestPatchEmployeeDtoSchema(Schema):
     department = fields.Str()
 
 
+# Проверять наличие поля в БД
 class RequestPatchEmployeeDto(RequestDto, RequestPatchEmployeeDtoSchema):
     fields: list
     __schema__ = RequestPatchEmployeeDtoSchema

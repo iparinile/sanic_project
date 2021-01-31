@@ -1,10 +1,5 @@
-from sanic.exceptions import SanicException
-
 from api.base import ResponseDto
-
-
-class ValidationError(SanicException):
-    status_code = 400
+from api.exceptions import ValidationError
 
 
 class ResponseAuthEmployeeDtoSchema:
